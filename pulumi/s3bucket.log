@@ -1,0 +1,25 @@
+/kubernetes-the-managed-way/pulumi  master ✗                                               23h35m ◒  
+▶ pulumi up                
+Previewing update (dev):
+     Type                 Name               Plan       
+ +   pulumi:pulumi:Stack  go-aws-pulumi-dev  create     
+ +   └─ aws:s3:Bucket     my-bucket          create     
+ 
+Resources:
+    + 2 to create
+
+Do you want to perform this update? yes
+Updating (dev):
+     Type                 Name               Status      
+ +   pulumi:pulumi:Stack  go-aws-pulumi-dev  created     
+ +   └─ aws:s3:Bucket     my-bucket          created     
+ 
+Outputs:
+    bucketName: "my-bucket-2f16db9"
+
+Resources:
+    + 2 created
+
+Duration: 19s
+
+Permalink: https://app.pulumi.com/suryaval/go-aws-pulumi/dev/updates/1
