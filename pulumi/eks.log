@@ -1,0 +1,58 @@
+/kubernetes-the-managed-way/pulumi  master ✗                                                   4m ⚑  
+▶ pulumi up                
+Previewing update (dev):
+[resource plugin kubernetes-2.4.3] installing
+Downloading plugin: 415.21 KiB / 23.66 MiB [>----------------------]   1.71% 11s[resource plugin aws-3.1.0] installing
+Downloading plugin: 23.66 MiB / 23.66 MiB [========================] 100.00% 12s
+Moving plugin... done.
+Downloading plugin: 68.92 MiB / 68.92 MiB [========================] 100.00% 14s
+Moving plugin... done.
+     Type                             Name                Plan       
+ +   pulumi:pulumi:Stack              go-aws-pulumi-dev   create     
+ +   ├─ aws:iam:Role                  eks-iam-eksRole     create     
+ +   ├─ aws:iam:Role                  nodegroup-iam-role  create     
+ +   ├─ aws:ec2:SecurityGroup         cluster-sg          create     
+ +   ├─ aws:iam:RolePolicyAttachment  rpa-0               create     
+ +   ├─ aws:iam:RolePolicyAttachment  rpa-1               create     
+ +   ├─ aws:iam:RolePolicyAttachment  ngpa-0              create     
+ +   ├─ aws:iam:RolePolicyAttachment  ngpa-1              create     
+ +   ├─ aws:iam:RolePolicyAttachment  ngpa-2              create     
+ +   ├─ aws:eks:Cluster               eks-cluster         create     
+ +   ├─ aws:eks:NodeGroup             node-group-2        create     
+ +   ├─ pulumi:providers:kubernetes   k8sprovider         create     
+ +   ├─ kubernetes:core:Namespace     app-ns              create     
+ +   ├─ kubernetes:core:Service       app-service         create     
+ +   └─ kubernetes:apps:Deployment    app-dep             create     
+ 
+Resources:
+    + 15 to create
+
+Do you want to perform this update? yes
+Updating (dev):
+     Type                             Name                Status      
+ +   pulumi:pulumi:Stack              go-aws-pulumi-dev   created     
+ +   ├─ aws:iam:Role                  eks-iam-eksRole     created     
+ +   ├─ aws:iam:Role                  nodegroup-iam-role  created     
+ +   ├─ aws:ec2:SecurityGroup         cluster-sg          created     
+ +   ├─ aws:iam:RolePolicyAttachment  rpa-1               created     
+ +   ├─ aws:iam:RolePolicyAttachment  rpa-0               created     
+ +   ├─ aws:iam:RolePolicyAttachment  ngpa-2              created     
+ +   ├─ aws:iam:RolePolicyAttachment  ngpa-0              created     
+ +   ├─ aws:iam:RolePolicyAttachment  ngpa-1              created     
+ +   ├─ aws:eks:Cluster               eks-cluster         created     
+ +   ├─ aws:eks:NodeGroup             node-group-2        created     
+ +   ├─ pulumi:providers:kubernetes   k8sprovider         created     
+ +   ├─ kubernetes:core:Namespace     app-ns              created     
+ +   ├─ kubernetes:core:Service       app-service         created     
+ +   └─ kubernetes:apps:Deployment    app-dep             created     
+ 
+Outputs:
+    kubeconfig: "{\n        \"apiVersion\": \"v1\",\n        \"clusters\": [{\n            \"cluster\": {\n                \"server\": \"https://96CF9D0F821902F9DDE9DC7FB38419B8.gr7.us-west-2.eks.amazonaws.com\",\n                \"certificate-authority-data\": \"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01EZ3lNakEyTWpnd01Wb1hEVE13TURneU1EQTJNamd3TVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTW84CjlSTFRCbHhTa3Z3NExrR1I0MFpOZEJuS2xsa2t4cVUvQXlqS2ZIOUpldnNNdkhhelcyaDl5U3FTdjZMZmgvT2oKbGQydHdPMklGWW9VcE90S3YzQWtZdWRNYzVNY0c3VGNYYlNYSCtyTFR2UTRwdGJsQWttaTI1aDNwbUZ2MVRpZgpGa1dTaGFkZWtMQUJuRHV5cGo5MnZtWHBSVFRPQjFkNVhLUHM0MEFscm91cHc0UkxvUkoycUJWNEpXWjkwWkgvCk1JVEVGdEd3NG92eW5vNmoxdnp5NkVQUkdJbXNQd2FXT2dwZzNZcE1LczNPS0ZLVVJCMWI3eFAxaDEyU0lDdksKMllMZUxqRWE0QkFPTVR4TVRCRXZ3cXQ5U1l0SSszVzRxNlVBZ29NcWFWd0E4RzNBdTZqaDdaVDVSY1ZCMHdURAo2UVRHTHQvTEZEdVJWSmZPUkVjQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFLYS8rWjZGQTl0ei9BbUNwUmpRekR3ZjloOU0KVkRuVlFJelpYK3IxNTJ5ZWVQeVp1aDdlL1Yva2VRWFdOOUgvajNkUmZkN21QeXZxMlptL09iLzduR0xKQ3FWbwpVeFVMRFUyOHNJR2xkNGZST1RORkhYL2FhM1I3cERmSVBNV2pwd2V3Q1hjenJmUEYxM1ozeDdCZHZKUmxjNlJiCm52dHN6dmVXZFhWVGg0eGd5K2xRZXlDZWlhalN2Zm9vQndleSsrZU12THJsT1RodGxKaC8yN3pEVi9CYldNUVIKS2ptSTNZWDlGenFndytGYnR0S2docm8zOG9meTg2TVFPVHpoWGNjRVhZU3BOcndidmV5V0x5YWlGNWhPZHAwYwpnankxMnlsOTNaWHVtT0U4M3dUb1dHd1NNV2d0cExDbVB2dFBjZG9FRDRmdDNxZWdqY3JIOHNQQ1Jkbz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=\"\n            },\n            \"name\": \"kubernetes\",\n        }],\n        \"contexts\": [{\n            \"context\": {\n                \"cluster\": \"kubernetes\",\n                \"user\": \"aws\",\n            },\n            \"name\": \"aws\",\n        }],\n        \"current-context\": \"aws\",\n        \"kind\": \"Config\",\n        \"users\": [{\n            \"name\": \"aws\",\n            \"user\": {\n                \"exec\": {\n                    \"apiVersion\": \"client.authentication.k8s.io/v1alpha1\",\n                    \"command\": \"aws-iam-authenticator\",\n                    \"args\": [\n                        \"token\",\n                        \"-i\",\n                        \"eks-cluster-de925ad\",\n                    ],\n                },\n            },\n        }],\n    }"
+    url       : "a3de6f01bcb2a421abca5db1e3bb65e5-217126694.us-west-2.elb.amazonaws.com"
+
+Resources:
+    + 15 created
+
+Duration: 13m38s
+
+Permalink: https://app.pulumi.com/suryaval/go-aws-pulumi/dev/updates/3
