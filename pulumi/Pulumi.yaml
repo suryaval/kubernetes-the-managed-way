@@ -1,3 +1,3 @@
 name: go-aws-pulumi
 runtime: go
-description: A minimal AWS Go Pulumi program
+description: Pulumi program in GO to create a K8s cluster in AWS EKS
