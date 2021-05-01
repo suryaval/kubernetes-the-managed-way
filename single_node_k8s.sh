@@ -17,3 +17,21 @@ apt-get install -y kubelet kubeadm kubectl
 echo "Installing Docker"
 
 apt-get install -y docker.io
+
+echo "Initializing Kubernetes Master..."
+
+kubeadm init
+
+echo "List Nodes..."
+
+kubectl get nodes
+
+echo "List All Pods..."
+
+kubectl get pods --all-namespaces
+
+echo "Install Pod Networking... Calico"
+
+curl https://docs.projectcalico.org/manifests/calico.yaml -O
+
+kubectl apply -f calico.yaml
