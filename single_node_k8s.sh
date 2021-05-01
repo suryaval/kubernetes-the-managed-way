@@ -35,3 +35,8 @@ echo "Install Pod Networking... Calico"
 curl https://docs.projectcalico.org/manifests/calico.yaml -O
 
 kubectl apply -f calico.yaml
+
+echo "Listing nodes and pods..."
+
+kubectl get nodes && kubectl get pods --all-namespaces
+
