@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "When you start an ec2 instance t2.medium to spin up a k8s cluster(master), this script helps bootstrap some basic things... you can also provide this script to cloudformation templates"
+
 echo "Installing KubeAdm"
 
 apt-get install -y apt-transport-https ca-certificates curl
@@ -11,3 +13,7 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 apt-get update
 
 apt-get install -y kubelet kubeadm kubectl
+
+echo "Installing Docker"
+
+apt-get install -y docker.io
